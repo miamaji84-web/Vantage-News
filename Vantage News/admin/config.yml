@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "videos"
+    label: "Video Studio"
+    folder: "_posts/videos"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Video Title", name: "title", widget: "string", hint: "একটি আকর্ষণীয় নাম দিন যা মানুষকে ক্লিক করতে বাধ্য করবে।"}
+      - {label: "Description / Details", name: "body", widget: "markdown", hint: "ভিডিও সম্পর্কে বিস্তারিত লিখুন।"}
+      - {label: "Upload Thumbnail", name: "thumbnail", widget: "image", hint: "কম্পিউটার থেকে হাই-কোয়ালিটি থাম্বনেইল ফটো আপলোড করুন।"}
+      - {label: "Video Link (YouTube/Direct)", name: "video_url", widget: "string", hint: "ভিডিওর আসল লিঙ্কটি এখানে দিন।"}
+      - {label: "Select Category", name: "category", widget: "select", options: ["Breaking News", "Technology", "Health", "Education", "Viral Videos"]}
+      - {label: "Search Tags", name: "tags", widget: "list", hint: "ট্যাগগুলো লিখুন (যেমন: news, sarikul, global)"}
+      - {label: "Duration", name: "duration", widget: "string", hint: "উদা: 05:30"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
